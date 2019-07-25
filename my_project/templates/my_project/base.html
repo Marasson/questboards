@@ -1,0 +1,102 @@
+{% load static %}
+<html>
+
+<head>
+    <title>QUESTBOARDS</title>
+    <link href="https://static1.squarespace.com/static/57fd2f12197aeadc51d111ba/t/57fe86d32e69cf55a0b6c4c2/favicon.ico" rel="icon" type="image/x-icon">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/my_project.css' %}">
+</head>
+
+<body>
+    <div class="page-header">
+        {% if user.is_authenticated %}
+        <p class="login">WELCOME USER: {{ user.get_username }}</p>
+        {% else %}
+        <p class="login">YOU ARE NOT LOGGED IN<br>
+            <a class="glyphicon glyphicon-log-in" href="{% url 'login'%}"> LOGIN</a>
+            {% endif %}</p>
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-off"></span> LOG OUT</a>
+        <a href="{% url 'about' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span> VIEW YOUR PROFILE</a>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> ADD NEW POST</a>
+        <a href="/drafts" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span> LIST OF POSTS FOR
+            PUBLICATION</a>
+        <a href="/" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span> MAIN LIST</a>
+
+        {% endif %}
+        <h1><a href="/">QUESTBOARDS</a></h1>
+    </div>
+    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+
+                {% block content %}
+                {% endblock %}
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="panel">
+                        <div class="panel-search">
+                        <h1 class="h1-panel">PANEL</h1>
+                        <a href="{% url 'search' %}" class="panel-search-link"><span class="glyphicon glyphicon-search"></span>SEARCH...</a>
+                        <br>
+                    </div>
+                </div>
+                    <br>
+                    <div class="panel">
+                        <h1 class="h1-panel-detail">DETAILS</h1>
+
+                        <p class="p-panel">
+
+                            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet,
+                            ut et
+                            voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a
+                            sapiente delectus,
+                            ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+                            asperiores repellat.
+                        </p>
+
+                        <p class="p-panel">
+                            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
+                            nobis est eligendi optio,
+                            cumque nihil impedit,
+                            quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis
+                            dolor repellendus.
+                            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet,
+                            ut et
+                            voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a
+                            sapiente delectus,
+                            ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+                            asperiores repellat.
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
