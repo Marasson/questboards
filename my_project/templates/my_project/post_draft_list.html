@@ -1,0 +1,14 @@
+{% extends 'my_project/base.html' %}
+
+{% block content %}
+<h1 class="h1-main-list">POST WAITING FOR PUBLISH</h1>   
+    {% for post in posts %}
+     
+    <div class="post">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }} - ENTER TO ACCEPT OR DECLINE</a></h1>
+            <p>{{ post.text|truncatechars:200 }}</p>
+            <p class="date">CREATED: {{ post.created_date|date:'d-m-Y' }} <span>| autor:</span>
+        {{ post.author }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

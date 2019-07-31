@@ -1,0 +1,21 @@
+{% extends 'my_project/base.html' %}
+{% load easy_maps_tags %}
+
+{% block content %}
+
+    <h1 class="h1-main-list">PROFILE DESCRIPTION</h1>
+
+    <div class="h1-main-list">
+        <h5>HELLO: <b>{{ user.get_full_name }}</b></h5>
+        <hr>
+        <h6>YOU ARE LOGIN AS: <b>{{ user.get_username }}</b></h6>
+        <h6>YOUR EMAIL IS: <b>{{ user.email }}</b></h6>
+        <h6>YOUR DATE JOIN IS: <b>{{ user.date_joined }}</b></h6>
+        <h6>ACCOUNT IS ACTIVE?: <b>{{ user.is_active }}</b></h6>
+        <h6>ACCOUNT IS ADMIN?: <b>{{ user.is_superuser }}</b></h6>
+        <h6>LAST LOGIN: <b>{{ user.last_login }}</b></h6>
+        <h6>YOUR LOCATION IS: <b>{{ user.get_username }}</b></h6>
+        {% easy_map "Russia, Ekaterinburg, Mira 32" 300 400 %}
+    </div>
+
+{% endblock %}
