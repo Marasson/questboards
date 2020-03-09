@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
+from django.db.models import Q
+
 
 from .forms import PostForm, CommentForm
 from .models import Post, Comment
@@ -13,6 +15,14 @@ def post_list(request):
     object_list = Post.objects.filter(published_date__lte=timezone.now()) #Posts.object.all() - wyswietla wszystkie obiekty post - created i publish
     paginator = Paginator(object_list, 3) # 3 posts in each page
     page = request.GET.get('page')
+
+    query = request.GET.get("q")
+    if query:
+        object_list = object_list.filter(            
+            Q(title__icontains=query)                     
+        )
+    
+
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:

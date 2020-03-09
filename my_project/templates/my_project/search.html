@@ -7,13 +7,13 @@
     <div class="h1-main-list">
         <h6>FORM</h6>
         <h3>TEST</h3>
-        <br>
-        <form>
-                First name:<br>
-                <input type="text" name="firstname"><br>
-                Last name:<br>
-                <input type="text" name="lastname">
-        </form>
+        <br/>
+            <form method='GET' action=''>
+            <input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'>
+            <input type='submit' value='Search'>
+            </form>
+
+
 
     </div>
 

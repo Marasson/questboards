@@ -46,6 +46,11 @@
                     <div class="panel">
                         <div class="panel-search">
                         <h1 class="h1-panel">PANEL</h1>
+                        
+                        <form method='GET' action=''>
+                                <input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'>
+                                <input type='submit' value='Search'>
+                        </form>                         
                         <a href="{% url 'search' %}" class="panel-search-link"><span class="glyphicon glyphicon-search"></span>SEARCH...</a>
                         <br>
                     </div>
