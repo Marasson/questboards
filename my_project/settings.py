@@ -26,7 +26,7 @@ SECRET_KEY = '+-bk273y77flm1%=gh(r$#_$6akokyn9(*mr-n^s!1hwg-jt+2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['questboards.herokuapp.com']
 
 
 # Application definition
