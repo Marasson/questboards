@@ -1,6 +1,4 @@
-web.py==0.37
 django
 gunicorn
 django-heroku
 django-easy-maps
-ipywidgets
