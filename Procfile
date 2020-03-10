@@ -1,2 +1,1 @@
-release: python3 manage.py migrate
-web: gunicorn questboards.wsgi:application
+web: gunicorn questboards.wsgi --log-file -
