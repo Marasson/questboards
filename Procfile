@@ -1,1 +1,1 @@
-web: gunicorn my_project.wsgi --log-file -
+web: gunicorn questboards.wsgi --log-file -
