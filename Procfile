@@ -1,1 +1,1 @@
-web: gunicorn first.wsgi --log-file -
+web: gunicorn questboards.wsgi --log-file -
