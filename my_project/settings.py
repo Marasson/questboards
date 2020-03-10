@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'whitenoise.runserver_nostatic',
-    #'easy_maps',
+    'easy_maps',
     'my_project',
 ]
 

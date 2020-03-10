@@ -1,3 +1,5 @@
 django
 django-heroku
+django-easy-maps
 gunicorn
+
