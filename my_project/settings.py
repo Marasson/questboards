@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.conf import global_settings
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,12 +28,14 @@ SECRET_KEY = '+-bk273y77flm1%=gh(r$#_$6akokyn9(*mr-n^s!1hwg-jt+2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['questboards.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['questboards.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,3 +134,6 @@ LOGIN_REDIRECT_URL = 'base'
 LOGOUT_REDIRECT_URL = 'base'
 
 EASY_MAPS_GOOGLE_KEY = 'AIzaSyBP5qJLC9H3TVFJ3aViwsgiEivpnQ6m7r8'
+
+JET_DEFAULT_THEME = 'light-gray'
+JET_SIDE_MENU_COMPACT = True
