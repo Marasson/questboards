@@ -17,12 +17,14 @@
         {% if user.is_authenticated %}
         <p class="login">WELCOME USER: {{ user.get_username }}</p>
         {% else %}
-        <p class="login">YOU ARE NOT LOGGED IN<br>
-            <a class="glyphicon glyphicon-log-in" href="{% url 'login'%}"> LOGIN</a>
+        <p class="login">YOU ARE NOT LOGGED IN<br /><br />
+            <a class="glyphicon glyphicon-user" style="color: #fff; text-decoration:underline;" href="{% url 'login'%}">LOGIN </a>
+            <a class="glyphicon glyphicon-user" style="color: #fff; text-decoration:underline;" href="{% url 'register'%}">REGISTER</a>
             {% endif %}</p>
 
         {% if user.is_authenticated %}
         <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-off"></span> LOG OUT</a>
+        <a href="{% url 'register' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span> REGISTER USER</a>
         <a href="{% url 'about' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span> VIEW YOUR PROFILE</a>
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> ADD NEW POST</a>
         <a href="/drafts" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span> LIST OF POSTS FOR
@@ -45,14 +47,16 @@
 
                     <div class="panel">
                         <div class="panel-search">
-                        <h1 class="h1-panel">SEARCH</h1>
+                        <h1 class="h1-panel">PANEL</h1>
                         
-                        <form method='GET' action=''>
+                        <!-- <form method='GET' action=''>
                                 <input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'>
                                 <input type='submit' value='Search'>
-                        </form>                         
-                        <!--<a href="{% url 'search' %}" class="panel-search-link"><span class="glyphicon glyphicon-search"></span>SEARCH...</a>-->
-                        <br>
+                        </form> -->
+                            <br />
+                        <a href="{% url 'search' %}" class="panel-search-link"><span class="glyphicon glyphicon-search"></span>SEARCH...</a>
+                        <br />
+
                     </div>
                 </div>
                     <br>
@@ -89,16 +93,11 @@
 
             </div>
 
-
+        <hr>
+            <div>
+                <p class="text-right">QUESTBOARDS 2019|2020</p>
+            </div>
         </div>
-
-
-
-
-
-
-
-
 
 
     </div>

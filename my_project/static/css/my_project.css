@@ -73,18 +73,12 @@ h1, h3, h4 {
 
 .login {
     margin-right: 20px;
-    font-size: 8pt;
+    font-size: 6pt;
     text-align: right;
     text-decoration: underline;
     color: #fff;
 }
 
-a.glyphicon-log-in, a.glyphicon-log-in:hover, a.glyphicon-log-in:active {
-    /*margin-right: 20px;*/
-    font-size: 9pt;
-    text-align: right;
-    color: #fff;
-}
 
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;

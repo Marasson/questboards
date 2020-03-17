@@ -1,0 +1,17 @@
+{% extends 'my_project/base.html' %}
+{% block content %}
+
+    <h1 class="h1-main-list">PROFILE REGISTER</h1>
+
+    <div class="h1-main-list">
+        <h5>FIELDS</h5>
+
+        <h2>Sign up</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit">Sign up</button>
+        </form>
+    </div>
+
+{% endblock %}
