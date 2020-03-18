@@ -102,7 +102,7 @@ def about(request):
 
 
 def register_f(request):
-    return render(request, 'my_project/register_f.html', {'register_f': register_f})
+    return render(request, 'my_project/register_f.html', {'register': register})
 
 def register(request):
     if request.method == 'POST':
